@@ -12,6 +12,7 @@ import { CustomersService } from './customers.service';
 import { CreateCustomerDto } from './dto/create-customer.dto';
 import { UpdateCustomerDto } from './dto/update-customer.dto';
 import { QueryCustomerDto } from './dto/query-customer.dto';
+import { AddPlansDto } from './dto/add-plans.dto';
 
 @Controller('customers')
 export class CustomersController {
@@ -30,6 +31,16 @@ export class CustomersController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.customersService.findOne(id);
+  }
+
+  @Post(':id/plans')
+  addPlans(@Param('id') id: string, @Body() { plansId }: AddPlansDto) {
+    return this.customersService.addPlans(id, plansId);
+  }
+
+  @Get(':id/plans')
+  listPlans(@Param('id') id: string) {
+    return this.customersService.listPlans(id);
   }
 
   @Patch(':id')

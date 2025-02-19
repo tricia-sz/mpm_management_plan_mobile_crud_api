@@ -29,7 +29,7 @@ model Customer {
 
 model Plan {
   id          String  @id @default(uuid())
-  planName    String
+  planName    String  @unique
   price       Decimal @db.Decimal(12, 2)
   dataPackage Int
   callMinutes Int

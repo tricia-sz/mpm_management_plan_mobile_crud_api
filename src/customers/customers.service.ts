@@ -46,6 +46,25 @@ export class CustomersService {
     });
   }
 
+  addPlans(customerId: string, plansId: string[]) {
+    return this.prismaService.planCustomer.createMany({
+      data: plansId.map((planId) => ({
+        customerId,
+        planId,
+      })),
+      skipDuplicates: true,
+    });
+  }
+
+  listPlans(customerId: string) {
+    return this.prismaService.planCustomer
+      .findMany({
+        where: { customerId },
+        select: { plan: true },
+      })
+      .then((plans) => plans.map(({ plan }) => plan));
+  }
+
   update(id: string, updateCustomerDto: UpdateCustomerDto) {
     return this.prismaService.customer.update({
       where: { id },

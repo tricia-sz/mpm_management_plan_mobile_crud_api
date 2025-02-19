@@ -12,6 +12,7 @@ async function bootstrap() {
       .setDescription('description about mobile manager')
       .setVersion('1.0')
       .addTag('Customers', 'Customers routes')
+      .addTag('Plans', 'Plans routes')
       .build(),
   );
   SwaggerModule.setup('doc', app, document);
