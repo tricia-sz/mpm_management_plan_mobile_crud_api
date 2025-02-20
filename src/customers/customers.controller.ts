@@ -12,7 +12,7 @@ import { CustomersService } from './customers.service';
 import { CreateCustomerDto } from './dto/create-customer.dto';
 import { UpdateCustomerDto } from './dto/update-customer.dto';
 import { QueryCustomerDto } from './dto/query-customer.dto';
-import { AddPlansDto } from './dto/add-plans.dto';
+import { CustomerPlansDto } from './dto/customer-plans.dto';
 
 @Controller('customers')
 export class CustomersController {
@@ -34,8 +34,13 @@ export class CustomersController {
   }
 
   @Post(':id/plans')
-  addPlans(@Param('id') id: string, @Body() { plansId }: AddPlansDto) {
+  addPlans(@Param('id') id: string, @Body() { plansId }: CustomerPlansDto) {
     return this.customersService.addPlans(id, plansId);
+  }
+
+  @Delete(':id/plans')
+  removePlans(@Param('id') id: string, @Body() { plansId }: CustomerPlansDto) {
+    return this.customersService.removePlans(id, plansId);
   }
 
   @Get(':id/plans')

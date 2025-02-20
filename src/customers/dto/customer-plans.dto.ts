@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsArray, IsUUID, ArrayNotEmpty } from 'class-validator';
 
-export class AddPlansDto {
+export class CustomerPlansDto {
   @ApiProperty({
     example: [
       'fa86e71b-1760-41d2-af20-e6b18872ce90',

@@ -56,6 +56,15 @@ export class CustomersService {
     });
   }
 
+  removePlans(customerId: string, plansId: string[]) {
+    return this.prismaService.planCustomer.deleteMany({
+      where: {
+        customerId,
+        planId: { in: plansId },
+      },
+    });
+  }
+
   listPlans(customerId: string) {
     return this.prismaService.planCustomer
       .findMany({

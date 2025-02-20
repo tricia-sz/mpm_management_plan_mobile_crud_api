@@ -41,6 +41,9 @@ CREATE UNIQUE INDEX "customers_cpf_key" ON "customers"("cpf");
 CREATE UNIQUE INDEX "customers_email_key" ON "customers"("email");
 
 -- CreateIndex
+CREATE UNIQUE INDEX "plans_planName_key" ON "plans"("planName");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "plans_customers_customerId_planId_key" ON "plans_customers"("customerId", "planId");
 
 -- AddForeignKey
