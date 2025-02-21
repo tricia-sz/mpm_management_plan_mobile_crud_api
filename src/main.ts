@@ -13,6 +13,8 @@ async function bootstrap() {
     }),
   );
 
+  app.enableCors();
+
   const document = SwaggerModule.createDocument(
     app,
     new DocumentBuilder()
