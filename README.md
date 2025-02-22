@@ -8,6 +8,7 @@
 ## Instalação
 
  - npm install  
+ - sudo systemctl restart docker  
  - docker-compose up --build
  - npx prisma migrate dev --name init
  
