@@ -6,20 +6,23 @@
  - Docker 27.5.1
 
 ## Instalação
-
- - npm install  
- - sudo systemctl restart docker  
- - docker-compose up --build
- - npx prisma migrate dev --name init
- 
+```bash
+ $ npm install  
+ $ sudo systemctl restart docker  
+ $ docker-compose up --build
+ $ npx prisma migrate dev --name init
+ ```
  ## Iniciando aplicação
-
- - npm run start:dev
-
+```bash
+ $ npm run start:dev
+```
  ## Comandos úteis
+```bash
+ $ npx prisma studio
+ $ npm run seed
 
- - npx prisma studio
+```
 
  ## Acessando Swagger
 
- - http://localhost:3000/doc
+ [http://localhost:3000/doc](http://localhost:3000/doc)

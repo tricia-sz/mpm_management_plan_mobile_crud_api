@@ -47,7 +47,7 @@ CREATE UNIQUE INDEX "plans_planName_key" ON "plans"("planName");
 CREATE UNIQUE INDEX "plans_customers_customerId_planId_key" ON "plans_customers"("customerId", "planId");
 
 -- AddForeignKey
-ALTER TABLE "plans_customers" ADD CONSTRAINT "plans_customers_customerId_fkey" FOREIGN KEY ("customerId") REFERENCES "customers"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "plans_customers" ADD CONSTRAINT "plans_customers_customerId_fkey" FOREIGN KEY ("customerId") REFERENCES "customers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "plans_customers" ADD CONSTRAINT "plans_customers_planId_fkey" FOREIGN KEY ("planId") REFERENCES "plans"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "plans_customers" ADD CONSTRAINT "plans_customers_planId_fkey" FOREIGN KEY ("planId") REFERENCES "plans"("id") ON DELETE CASCADE ON UPDATE CASCADE;

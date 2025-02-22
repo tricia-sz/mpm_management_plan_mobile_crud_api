@@ -45,10 +45,10 @@ model PlanCustomer {
   id String @id @default(uuid())
 
   customerId String
-  customer   Customer @relation(fields: [customerId], references: [id])
+  customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
 
   planId String
-  plan   Plan   @relation(fields: [planId], references: [id])
+  plan   Plan   @relation(fields: [planId], references: [id],  onDelete: Cascade)
 
   createdAt DateTime @default(now())
 
